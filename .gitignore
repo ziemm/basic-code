@@ -5,3 +5,5 @@ basic-code.iml
 .idea/workspace.xml
 day07-code/day07-code.iml
 out/production/day07-code/cn/itcast/day07/demo01/Demo01.class
+out/production/day07-code/cn/itcast/day07/demo01/Anonymous.class
+out/production/day07-code/META-INF/day07-code.kotlin_module
