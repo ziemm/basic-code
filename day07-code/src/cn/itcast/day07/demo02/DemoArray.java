@@ -9,11 +9,9 @@ package cn.itcast.day07.demo02;
 public class DemoArray {
     public static void main(String[] args) {
         Person[] array = new Person[3];
-
         Person one = new Person("张三",18,true);
         Person two = new Person("张四",18,true);
         Person three = new Person("张五",20,false);
-
         array[0] = one;
         array[1] = two;
         array[2] = three;
