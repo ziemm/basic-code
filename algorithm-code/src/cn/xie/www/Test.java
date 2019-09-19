@@ -6,6 +6,6 @@ package cn.xie.www;
  **/
 public class Test {
     public static void main(String[] args) {
-        System.out.println("仔细忽略文件有的不能忽略");
+        System.out.println("生成新的文件");
     }
 }
