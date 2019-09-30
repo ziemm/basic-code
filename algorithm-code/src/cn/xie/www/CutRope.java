@@ -54,7 +54,7 @@ public class CutRope {
             //结果保留两位小数
             String result = String.format("%.2f", mid);
 
-            //按照要求格式化输出
+            //按照要求格式化输出，结果保留两位小数
             String str="";
             for (int i = 0; i < counts.length-1 ; i++) {
                 str+=counts[i]+"条、";
