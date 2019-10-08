@@ -29,7 +29,7 @@ public class FileUpload_Server {
         byte[] b = new byte[8*1024];
         int len = 0;
         while((len=bis.read(b))!=-1){
-            
+
         }
 
 
