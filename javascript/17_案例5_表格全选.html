@@ -38,68 +38,53 @@
 
 
       //1.在页面加载完后绑定事件
-      window.onload = function(){
-          //2.给全选按钮绑定单击事件
-          document.getElementById("selectAll").onclick = function(){
-                //全选
-                //1.获取所有的checkbox
-                var cbs = document.getElementsByName("cb");
-                //2.遍历
-                  for (var i = 0; i < cbs.length; i++) {
-                      //3.设置每一个cb的状态为选中  checked
-                      cbs[i].checked = true;
-                  }
+      window.onload = function () {
+          //全选，先给全选按钮绑定单击事件
+          document.getElementById("selectAll").onclick = function () {
+              //获取所有checkbox
+              var cbs = document.getElementsByName("cb");
+              for (var i = 0; i < cbs.length; i++) {
+                  cbs[i].checked = true;
+              }
           }
 
-          document.getElementById("unSelectAll").onclick = function(){
-              //全不选
-              //1.获取所有的checkbox
+          //全不选，先给全不选按钮绑定单击事件
+          document.getElementById("unSelectAll").onclick = function () {
+              //获取所有checkbox
               var cbs = document.getElementsByName("cb");
-              //2.遍历
               for (var i = 0; i < cbs.length; i++) {
-                  //3.设置每一个cb的状态为未选中  checked
                   cbs[i].checked = false;
               }
           }
 
-          document.getElementById("selectRev").onclick = function(){
-              //反选
-              //1.获取所有的checkbox
+          //全不选，先给全不选按钮绑定单击事件
+          document.getElementById("selectRev").onclick = function () {
+              //获取所有checkbox
               var cbs = document.getElementsByName("cb");
-              //2.遍历
               for (var i = 0; i < cbs.length; i++) {
-                  //3.设置每一个cb的状态为相反
                   cbs[i].checked = !cbs[i].checked;
               }
           }
 
-          document.getElementById("firstCb").onclick = function(){
-              //第一个cb点击
-              //1.获取所有的checkbox
+          //全选框，先给全选按钮绑定单击事件
+          document.getElementById("firstCb").onclick = function () {
+              //获取所有checkbox
               var cbs = document.getElementsByName("cb");
-              //获取第一个cb
-
-              //2.遍历
               for (var i = 0; i < cbs.length; i++) {
-                  //3.设置每一个cb的状态和第一个cb的状态一样
-                  cbs[i].checked =  this.checked;
+                  cbs[i].checked = this.checked;
               }
           }
 
-          //给所有tr绑定鼠标移到元素之上和移出元素事件
+          //给所有tr绑定鼠标移到元素之上和移出元素之上事件
           var trs = document.getElementsByTagName("tr");
-          //2.遍历
+           //遍历
           for (var i = 0; i < trs.length; i++) {
-              //移到元素之上
               trs[i].onmouseover = function(){
-                    this.className = "over";
+                  this.className = "over";
               }
-
-              //移出元素
               trs[i].onmouseout = function(){
-                     this.className = "out";
+                  this.className = "out";
               }
-
           }
 
       }

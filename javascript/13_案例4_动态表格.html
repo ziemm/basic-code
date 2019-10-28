@@ -85,46 +85,55 @@
 
      */
 
-    //1.获取按钮
-   /* document.getElementById("btn_add").onclick = function(){
-        //2.获取文本框的内容
+    /*//1.获取添加的按钮并绑定事件
+    document.getElementById("btn_add").onclick = function(){
+        //2.获取文本框中的值
         var id = document.getElementById("id").value;
         var name = document.getElementById("name").value;
         var gender = document.getElementById("gender").value;
+        //3.创建td并赋值
 
-        //3.创建td，赋值td的标签体
-        //id 的 td
         var td_id = document.createElement("td");
-        var text_id = document.createTextNode(id);
-        td_id.appendChild(text_id);
-        //name 的 td
+        var text_id =document.createTextNode(id);
+        td_id.appendChild(text_id)
+
         var td_name = document.createElement("td");
-        var text_name = document.createTextNode(name);
-        td_name.appendChild(text_name);
+        var text_id = document.createTextNode(name);
+        td_name.appendChild(text_id);
+
         //gender 的 td
         var td_gender = document.createElement("td");
         var text_gender = document.createTextNode(gender);
         td_gender.appendChild(text_gender);
-        //a标签的td
+
+        //a的标签
         var td_a = document.createElement("td");
         var ele_a = document.createElement("a");
         ele_a.setAttribute("href","javascript:void(0);");
-        ele_a.setAttribute("onclick","delTr(this);");
+        ele_a.setAttribute("onclick","delTr(this);");//添加删除的事件
         var text_a = document.createTextNode("删除");
         ele_a.appendChild(text_a);
         td_a.appendChild(ele_a);
 
-        //4.创建tr
+        //5.创建tr
         var tr = document.createElement("tr");
-        //5.添加td到tr中
         tr.appendChild(td_id);
         tr.appendChild(td_name);
         tr.appendChild(td_gender);
         tr.appendChild(td_a);
-        //6.获取table
+
+        //获取table
         var table = document.getElementsByTagName("table")[0];
         table.appendChild(tr);
+
+    }
+
+    function delTr(obj){
+        var table = obj.parentNode.parentNode.parentNode;
+        var tr = obj.parentNode.parentNode;
+        table.removeChild(tr);
     }*/
+
 
    //使用innerHTML添加
     document.getElementById("btn_add").onclick = function() {
@@ -153,7 +162,6 @@
 
         table.removeChild(tr);
     }
-
 
 </script>
 
