@@ -1,46 +1,46 @@
 package cn.itcast.xml.jsoup;
 
 
+import cn.wanghaomiao.xpath.exception.XpathSyntaxErrorException;
+import cn.wanghaomiao.xpath.model.JXDocument;
+import cn.wanghaomiao.xpath.model.JXNode;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import org.jsoup.select.Elements;
-
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 /**
- *选择器查询
+ *Xpath查询  根据w3c XML 中的Xpath参考手册来定义查找参数
+ *
  */
-public class JsoupDemo5 {
-    public static void main(String[] args) throws IOException {
+public class JsoupDemo6 {
+    public static void main(String[] args) throws IOException, XpathSyntaxErrorException {
         //1.获取student.xml的path
-        String path = JsoupDemo5.class.getClassLoader().getResource("student.xml").getPath();
+        String path = JsoupDemo6.class.getClassLoader().getResource("student.xml").getPath();
         //2.获取Document对象
         Document document = Jsoup.parse(new File(path), "utf-8");
 
-        //3.查询name标签
-        /*
-            div{
+        //3根据document对象，创建JXDocument
+        JXDocument jxDocument = new JXDocument(document);
 
-            }
-         */
-        Elements elements = document.select("name");
-        System.out.println(elements);
-        System.out.println("=----------------");
-        //4.查询id值为itcast的元素
-        Elements elements1 = document.select("#itcast");
-        System.out.println(elements1);
-        System.out.println("----------------");
-        //5.获取student标签并且number属性值为heima_0001的age子标签
-        //5.1.获取student标签并且number属性值为heima_0001
-        Elements elements2 = document.select("student[number=\"heima_0001\"]");
-        System.out.println(elements2);
-        System.out.println("----------------");
+        //4结合Xpath语法查询
+        List<JXNode> jxNodes = jxDocument.selN("//student");
+//        for (JXNode jxNode : jxNodes) {
+//            System.out.println(jxNode);
+//        }
+        System.out.println("--------------------");
+        List<JXNode> jxNodes2 = jxDocument.selN("//student/name");
+//        for (JXNode jxNode : jxNodes) {
+//            System.out.println(jxNode);
+//        }
 
-        //5.2获取student标签并且number属性值为heima_0001的age子标签
-        Elements elements3 = document.select("student[number=\"heima_0001\"] > age");
-        System.out.println(elements3);
+        //4.3查询student标签下带有id属性的name标签
+        List<JXNode> jxNodes3 = jxDocument.selN("//student/name[@id]");
+        for (JXNode jxNode : jxNodes3) {
+            System.out.println(jxNode);
+        }
 
     }
 
