@@ -10,7 +10,7 @@ import java.io.IOException;
  * @author: xie
  * @create: 2019-10-30 21:46
  **/
-@WebServlet("/demo3")
+//@WebServlet("/demo3")
 public class ServletDemo implements Servlet {
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {

@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/day07-code/day07-code.iml" filepath="$PROJECT_DIR$/day07-code/day07-code.iml" />
       <module fileurl="file://$PROJECT_DIR$/day13_servlet/day13_servlet.iml" filepath="$PROJECT_DIR$/day13_servlet/day13_servlet.iml" />
       <module fileurl="file://$PROJECT_DIR$/day13_tomcat/day13_tomcat.iml" filepath="$PROJECT_DIR$/day13_tomcat/day13_tomcat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day14_test/day14_test.iml" filepath="$PROJECT_DIR$/day14_test/day14_test.iml" />
       <module fileurl="file://$PROJECT_DIR$/javascript/javascript.iml" filepath="$PROJECT_DIR$/javascript/javascript.iml" />
       <module fileurl="file://$PROJECT_DIR$/jdbc/jdbc.iml" filepath="$PROJECT_DIR$/jdbc/jdbc.iml" />
     </modules>

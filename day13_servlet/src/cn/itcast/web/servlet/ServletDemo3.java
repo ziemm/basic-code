@@ -15,11 +15,10 @@ import java.io.IOException;
 //@WebServlet({"/d4","/dd4","/ddd4"})
 //@WebServlet({"/user/d4"})
 //@WebServlet({"/*"})
-@WebServlet({"/demo4.do"})
+//@WebServlet("*.do")
 public class ServletDemo3 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("不同的，各种类型请求路径...");
-        System.out.println(req);
+
     }
 }
