@@ -1,9 +1,9 @@
-package cn.xie.www;
+package cn.xie.www.homework1;
 
 
 import java.util.Scanner;
 
-public class M3 {
+public class T3 {
     private static int n =0;
 
     public static void main(String[] args) {

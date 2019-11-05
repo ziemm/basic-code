@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @author: xie
  * @create: 2019-09-19 09:33
  **/
-public class CutRope {
+public class M1CutRope {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("请输入绳子个数N：");

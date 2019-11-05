@@ -1,4 +1,4 @@
-package cn.xie.www;
+package cn.xie.www.homework1;
 
 import java.util.Scanner;
 
@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @author: xie
  * @create: 2019-10-28 08:06
  **/
-public class Matrix {
+public class T1 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();

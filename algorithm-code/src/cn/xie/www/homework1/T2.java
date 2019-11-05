@@ -1,4 +1,4 @@
-package cn.xie.www;
+package cn.xie.www.homework1;
 
 import java.text.DecimalFormat;
 import java.util.*;
@@ -7,7 +7,7 @@ import java.util.*;
  * @author: xie
  * @create: 2019-10-28 08:53
  **/
-public class M2 {
+public class T2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n =sc.nextInt();

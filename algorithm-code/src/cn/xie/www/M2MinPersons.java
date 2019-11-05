@@ -20,7 +20,7 @@ import java.util.Scanner;
  * @author: xie
  * @create: 2019-10-24 09:24
  **/
-public class MinPersons {
+public class M2MinPersons {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
        double p = sc.nextDouble();
