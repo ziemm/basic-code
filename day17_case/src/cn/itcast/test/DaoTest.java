@@ -1,5 +1,6 @@
 package cn.itcast.test;
 
+import cn.itcast.dao.UserDao;
 import cn.itcast.dao.impl.UserDaoImpl;
 import cn.itcast.domain.User;
 import cn.itcast.utils.JDBCUtils;
@@ -33,6 +34,12 @@ public class DaoTest {
         user.setQq("547829555");
         user.setEmail("aa@aa.com");
         udi.add(user);
-
     }
+    @Test
+    public void test3(){
+        UserDao dao = new UserDaoImpl();
+        User zhangsan = dao.findUserByUsernameAndPassword("zhangsan", "123456");
+        System.out.println(zhangsan);
+    }
+
 }
