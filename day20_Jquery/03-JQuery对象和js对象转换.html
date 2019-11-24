@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuer对象和js对象的转换</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div id="div1">div1....</div>
+<div id="div2">div2....</div>
+<input type="button" value="点我" id="b1">
+
+<script>
+
+    var divs=$("div");
+    alert(divs.length);
+    divs.html("bbb");
+    divs[0].innerHTML = "ddd";
+    divs.get(1).innerHTML = "eeeeee";
+
+</script>
+
+</body>
+</html>
