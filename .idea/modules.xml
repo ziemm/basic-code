@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/day17_case/day17_case.iml" filepath="$PROJECT_DIR$/day17_case/day17_case.iml" />
       <module fileurl="file://$PROJECT_DIR$/day20_Jquery/day20_Jquery.iml" filepath="$PROJECT_DIR$/day20_Jquery/day20_Jquery.iml" />
       <module fileurl="file://$PROJECT_DIR$/day22_Ajax&amp;Json/day22_Ajax&amp;Json.iml" filepath="$PROJECT_DIR$/day22_Ajax&amp;Json/day22_Ajax&amp;Json.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day23_redis/day23_redis.iml" filepath="$PROJECT_DIR$/day23_redis/day23_redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/javascript/javascript.iml" filepath="$PROJECT_DIR$/javascript/javascript.iml" />
       <module fileurl="file://$PROJECT_DIR$/jdbc/jdbc.iml" filepath="$PROJECT_DIR$/jdbc/jdbc.iml" />
     </modules>
