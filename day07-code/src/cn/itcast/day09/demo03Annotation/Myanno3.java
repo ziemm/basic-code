@@ -17,7 +17,7 @@ import java.lang.annotation.Target;
  *         * @Documented：描述注解是否被抽取到api文档中
  *         * @Inherited：描述注解是否被子类继承
  */
-@Target(ElementType.TYPE)
+@Target({ElementType.TYPE,ElementType.FIELD,ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Myanno3 {
 }

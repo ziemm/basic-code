@@ -4,7 +4,7 @@ package cn.itcast.day09.demo02Reflection;
  * @author: xie
  * @create: 2019-10-14 20:36
  **/
-public class DemoGetClass {
+public class Demo01GetClass {
     public static void main(String[] args) throws Exception {
         //有字节码文件后
         Class cls1 = Class.forName("cn.itcast.day09.demo02Reflection.Person");
