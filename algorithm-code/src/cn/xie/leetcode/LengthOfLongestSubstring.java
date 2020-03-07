@@ -13,7 +13,6 @@ import java.util.Set;
  **/
 public class LengthOfLongestSubstring {
     public static void main(String[] args) {
-
     }
 
     /**
@@ -45,6 +44,7 @@ public class LengthOfLongestSubstring {
      * @return
      */
     public static int lengthOfLongestSubstring2(String s) {
+
 
         int n = s.length();
         int ans =0;

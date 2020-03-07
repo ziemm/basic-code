@@ -12,7 +12,7 @@ public class FindRepeatNumber {
     public static void main(String[] args) {
         int[] nums = {2, 3, 1, 0, 2, 5, 3};
 
-        System.out.println(findRepeatNumber(nums));
+        System.out.println(findRepeatNumber4(nums));
 
     }
 
@@ -70,6 +70,30 @@ public class FindRepeatNumber {
             }
         }
         return -1;
+    }
+
+    /**
+     * 空间复杂度为O(1)，时间复杂度为O(N)的算法，前提是n个数的范围是0~n-1
+     * 以保证有重复数字
+     * @param nums
+     * @return
+     */
+    public static int findRepeatNumber4(int[] nums) {
+        int ans =-1;
+        for (int i = 0; i < nums.length; i++) {
+           while (nums[i]!=i){
+               if (nums[i]==nums[nums[i]]){//在当前位置和在nums[i]位置都有
+                   ans=nums[i];
+                   break;
+               }
+               //交换
+               int temp=nums[i];
+               nums[i]=nums[temp];
+               nums[temp]=temp;
+
+           }
+        }
+        return ans;
     }
 
 }
