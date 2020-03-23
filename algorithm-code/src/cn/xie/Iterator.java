@@ -28,13 +28,13 @@ public class Iterator {
 
             /*
              * 判断集合中有没有"abc3"这个元素
-             * 如果有,增加一个元素"itcast"
+             * 如果有,增加一个元素"xie"
              * 编程技巧:使用equals判断的时候,要把已知的变量写在前边,未知的写在后边,防止空指针异常
              */
             //if(s.equals("abc3")){
             if ("abc3".equals(s)) {
                 //1.迭代就是迭代,不要对集合进行修改
-                //list.add("itcast");
+                //list.add("xie");
             }
 
             System.out.println(s);
@@ -48,7 +48,7 @@ public class Iterator {
         while(listIt.hasNext()){
             String s = listIt.next();
             if("abc3".equals(s)){
-                listIt.add("itcast");
+                listIt.add("xie");
             }
             System.out.println(s);
         }

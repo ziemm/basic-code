@@ -12,7 +12,7 @@
     -->
     <servlet>
         <servlet-name>demo1</servlet-name>
-        <servlet-class>cn.itcast.web.servlet.ServletDemo1</servlet-class>
+        <servlet-class>cn.xie.web.servlet.ServletDemo1</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>demo1</servlet-name>
@@ -22,7 +22,7 @@
 
     <servlet>
         <servlet-name>demo2</servlet-name>
-        <servlet-class>cn.itcast.web.servlet.ServletDemo2</servlet-class>
+        <servlet-class>cn.xie.web.servlet.ServletDemo2</servlet-class>
         <!--指定servlet的创建时机
            服务器启动时创建：0+
            第一次被访问时创建：负数

@@ -1,4 +1,4 @@
-<%@ page import="cn.itcast.web.domain.User" %>
+<%@ page import="cn.xie.web.domain.User" %>
 <%@ page import="java.util.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>

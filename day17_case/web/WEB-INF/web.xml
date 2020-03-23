@@ -5,7 +5,7 @@
          version="3.1">
     <!-- <filter>
          <filter-name>demo1</filter-name>
-         <filter-class>cn.itcast.web.filter.FilterDemo1</filter-class>
+         <filter-class>cn.xieb.filter.FilterDemo1</filter-class>
      </filter>
      <filter-mapping>
          <filter-name>demo1</filter-name>
@@ -17,7 +17,7 @@
        配置监听器
     -->
     <!--<listener>
-       <listener-class>cn.itcast.web.listener.ContextLoaderListener</listener-class>
+       <listener-class>cn.xieb.listener.ContextLoaderListener</listener-class>
     </listener>-->
 
     <!-- 指定初始化参数 -->
@@ -29,7 +29,7 @@
 
     <!--配置监听器-->
     <listener>
-        <listener-class>cn.itcast.web.listener.ContextLoaderListener</listener-class>
+        <listener-class>cn.xie.web.listener.ContextLoaderListener</listener-class>
     </listener>
     <!--指定初始化参数-->
     <context-param>

@@ -9,7 +9,7 @@
  -->
  <students   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  			 xmlns="http://www.itcast.cn/xml"
- 		   xsi:schemaLocation="http://www.itcast.cn/xml  cn/itcast/xml/schema/student.xsd"
+ 		   xsi:schemaLocation="http://www.itcast.cn/xml  cn/xie/xml/schema/student.xsd"
  		    >
  	<student number="heima_0001">
 		<name>zhangsan</name>

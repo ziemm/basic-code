@@ -5,8 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/XML/XML.iml" filepath="$PROJECT_DIR$/XML/XML.iml" />
       <module fileurl="file://$PROJECT_DIR$/algorithm-code/algorithm-code.iml" filepath="$PROJECT_DIR$/algorithm-code/algorithm-code.iml" />
       <module fileurl="file://$PROJECT_DIR$/b-Jvm/b-Jvm.iml" filepath="$PROJECT_DIR$/b-Jvm/b-Jvm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basic-code/basic-code.iml" filepath="$PROJECT_DIR$/basic-code/basic-code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basic-code/basic-code1.iml" filepath="$PROJECT_DIR$/basic-code/basic-code1.iml" />
       <module fileurl="file://$PROJECT_DIR$/bootstrap/bootstrap.iml" filepath="$PROJECT_DIR$/bootstrap/bootstrap.iml" />
-      <module fileurl="file://$PROJECT_DIR$/day07-code/day07-code.iml" filepath="$PROJECT_DIR$/day07-code/day07-code.iml" />
       <module fileurl="file://$PROJECT_DIR$/day13_servlet/day13_servlet.iml" filepath="$PROJECT_DIR$/day13_servlet/day13_servlet.iml" />
       <module fileurl="file://$PROJECT_DIR$/day13_tomcat/day13_tomcat.iml" filepath="$PROJECT_DIR$/day13_tomcat/day13_tomcat.iml" />
       <module fileurl="file://$PROJECT_DIR$/day14_test/day14_test.iml" filepath="$PROJECT_DIR$/day14_test/day14_test.iml" />
