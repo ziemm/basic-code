@@ -70,4 +70,21 @@ public class CuttingRope {
 
         return (int)(Math.pow(3,timesOf3)*(int)Math.pow(2,timesOf2));
     }
+
+    public int cuttingRope3(int n) {
+        if(n<2)
+            return 0;
+        if(n==2)
+            return 1;
+        if(n==3)
+            return 2;
+
+        long res =1;
+        while (n>4){
+            res *= 3;
+            res = res %(1000000007);
+            n-=3;
+        }
+      return (int)(res * n % 1000000007);
+    }
 }
