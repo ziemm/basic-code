@@ -1,4 +1,4 @@
-package cn.xie.dem01_simple_bean_factory;
+package cn.xie.demo01_simple_bean_factory;
 
 /**
  * 计算的抽象类，会被实例陈各种类型的计算

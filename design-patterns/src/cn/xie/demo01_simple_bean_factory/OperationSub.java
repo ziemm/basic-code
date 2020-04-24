@@ -1,4 +1,4 @@
-package cn.xie.dem01_simple_bean_factory;
+package cn.xie.demo01_simple_bean_factory;
 
 /**
  * @author: xie
