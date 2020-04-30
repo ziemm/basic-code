@@ -1,4 +1,4 @@
-package cn.xie.demo23_interpreter;
+package cn.xie.demo24_interpreter;
 
 /**
  * @author: xie
