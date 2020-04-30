@@ -7,5 +7,21 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../day14_test/web/WEB-INF/lib/druid-1.0.9.jar!/" />
+          <root url="jar://$MODULE_DIR$/../day14_test/web/WEB-INF/lib/commons-logging-1.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../day14_test/web/WEB-INF/lib/commons-beanutils-1.8.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../day14_test/web/WEB-INF/lib/spring-tx-5.0.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/../day14_test/web/WEB-INF/lib/spring-core-5.0.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/../day14_test/web/WEB-INF/lib/spring-jdbc-5.0.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/../day14_test/web/WEB-INF/lib/spring-beans-5.0.0.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/../day14_test/web/WEB-INF/lib/ojdbc6-11.2.0.4.0-atlassian-hosted.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
