@@ -2,7 +2,9 @@ package cn.xie.demo2;
 
 import java.security.PublicKey;
 import java.util.ArrayList;
+import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * @author: xie
@@ -12,35 +14,39 @@ public class ReentrantLockList {
 
     private ArrayList<String> array = new ArrayList<>();
 
-    private volatile ReentrantLock lock = new ReentrantLock();
+    //private volatile ReentrantLock lock = new ReentrantLock();
+    private final ReentrantReadWriteLock lock =new ReentrantReadWriteLock();
+    private final Lock readLock = lock.readLock();
+    private final Lock writeLock = lock.writeLock();
+
 
     public void add(String e){
-        lock.lock();
+        writeLock.lock();
         try {
             array.add(e);
         } finally {
-            lock.unlock();
+            writeLock.unlock();
         }
     }
 
     //删除
     public void remove(String e){
-        lock.lock();
+        writeLock.lock();
 
         try {
             array.remove(e);
         } finally {
-            lock.unlock();
+            writeLock.unlock();
         }
     }
 
     public String get(int index){
-        lock.lock();
+        readLock.lock();
 
         try {
             return array.get(index);
         } finally {
-            lock.unlock();
+            readLock.unlock();
         }
     }
 }
