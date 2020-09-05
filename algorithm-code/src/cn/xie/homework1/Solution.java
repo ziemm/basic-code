@@ -26,6 +26,7 @@ public class Solution {
             ArrayList<String> list = values.get(i);
             for (String s : list) {
                 temp.put(s,"");
+
             }
             les.add(temp);
         }
