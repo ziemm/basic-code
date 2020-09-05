@@ -9,7 +9,6 @@ import java.util.LinkedList;
 public class MaxSlidingWindow {
     public int[] maxSlidingWindow(int[] nums, int k) {
         if(nums ==null || nums.length<=0 || nums.length<k) return new int[0];
-
         int index = 0;
         int[] res = new int[nums.length-k+1];
         LinkedList<Integer> dqueue = new LinkedList<>();  //维护一个单调双端队列，头部总是存放最大的数的下标

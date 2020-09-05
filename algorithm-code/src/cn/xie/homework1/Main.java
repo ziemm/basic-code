@@ -1,45 +1,30 @@
 package cn.xie.homework1;
 
-
-import java.util.Scanner;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Stack;
 
 /**
  * @author: xie
- * @create: 2020-04-23 19:07
+ * @create: 2020-08-23 15:55
  **/
 public class Main {
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        //数组长度
-        int n = scan.nextInt();
-        if(n==0){
-            System.out.println(0);
-        }else {
-            int[] arr = new int[n];
-            for (int i = 0; i < arr.length; i++) {
-                arr[i]=scan.nextInt();
-            }
+    public boolean isValid (String s) {
+        if(s==null || s.length() ==0)
+            return false;
+        Stack<Character> stack = new Stack<>();
+        char[] chars = s.toCharArray();
 
-            int sum = 0;
-            for (int i = 0; i < arr.length; i++) {
-                sum+=count(arr[i]);
-            }
-            System.out.println(sum);
+        for (int i = 0; i < chars.length; i++) {
+            if(chars[i]=='[')
+                stack.push(']');
+            else if(chars[i]=='{')
+                stack.push('}');
+            else if(chars[i]=='(')
+                stack.push(')');
+            else if(stack.isEmpty() || chars[i] !=stack.pop())
+                return false;
         }
-
+        return stack.isEmpty();
     }
-
-    public static int count(int num){
-        if(num<=1)
-            return 0;
-        if(num==2 || num==3)
-            return 1;
-        if(num%2==0){
-            return num/2;
-        }else {
-            return (num-3)/2+1;
-        }
-
-    }
-
 }

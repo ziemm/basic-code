@@ -5,6 +5,11 @@ package cn.xie.sword;
  * @create: 2020-07-24 22:15
  **/
 public class NthUglyNumber {
+    public static void main(String[] args) {
+        NthUglyNumber obj = new NthUglyNumber();
+        int i = obj.nthUglyNumber(4);
+        System.out.println(i);
+    }
     public int nthUglyNumber(int n){
         if(n<=0) return 0;
         int[] ugly = new int[n];

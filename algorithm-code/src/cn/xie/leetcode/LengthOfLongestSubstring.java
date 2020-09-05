@@ -23,7 +23,6 @@ public class LengthOfLongestSubstring {
     public static int lengthOfLongestSubstring(String s) {
 
         int n = s.length();
-
         Set<Character> set = new HashSet<>();
         int ans =0,i=0,j=0;
         while (i<n&&j<n){
@@ -51,7 +50,6 @@ public class LengthOfLongestSubstring {
 
         Map<Character,Integer> map = new HashMap<>(); //定义字符到索引的映射
         for (int j =0,i=0;j<n;j++){
-
             if(map.containsKey(s.charAt(j))){
                 i = Math.max(map.get(s.charAt(j)),i);
             }

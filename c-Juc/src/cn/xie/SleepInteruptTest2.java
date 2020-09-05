@@ -21,7 +21,6 @@ public class SleepInteruptTest2 {
         threadOne.start();
         threadOne.interrupt();
 
-
         threadOne.join();
         System.out.println("main thread is over");
     }

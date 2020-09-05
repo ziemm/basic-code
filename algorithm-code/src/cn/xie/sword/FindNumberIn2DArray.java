@@ -2,20 +2,20 @@ package cn.xie.sword;
 
 /**
  * 面试题04
- * 从右往左先剔除比target大的所在列，
- * 确定列后再从上往下找target所在行。
- * 经验：二维数组中的每个分量是横向排列的，a[][]中的第一个[]中的数字表示为该二维数组的第几个元素，里面的值对应的一个二维矩阵的列号
+ * 确定列后再从下往上找target所在行。
+ * 从左往右先剔除比target小的所在列，
+ *
  * @author: xie
  * @create: 2020-02-29 22:25
  **/
 public class FindNumberIn2DArray {
     public static void main(String[] args) {
         int[][] martix = {
-                {1, 4, 7, 11, 15},
-                {2, 5, 8, 12, 19},
-                {3, 6, 9, 16, 22},
-                {10, 13, 14, 17, 24},
-                {18, 21, 23, 26, 30}
+                {1, 4, 7, 11},
+                {2, 5, 8, 12},
+                {3, 6, 9, 16},
+                {10, 13, 14, 17},
+                {18, 21, 23, 26}
         };
         FindNumberIn2DArray O = new FindNumberIn2DArray();
        boolean result = O.findNumberIn2DArray(martix, 5);

@@ -8,6 +8,7 @@ public class Person {
     String name ;
     int age;
     boolean sexy;
+    public static int b = 0;
 
     public Person() {
     }
