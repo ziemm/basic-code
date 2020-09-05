@@ -12,7 +12,6 @@ import java.util.Map;
  **/
 public class Solution {
     public static void main(String[] args) {
-
     }
 
     public ArrayList<String> findCommonString (ArrayList<ArrayList<String>> values) {
