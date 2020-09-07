@@ -1,5 +1,7 @@
 package cn.xie.homework1;
 
+import cn.xie.TreeNode;
+
 import java.util.*;
 
 /**
@@ -7,56 +9,70 @@ import java.util.*;
  * @create: 2020-08-23 15:55
  **/
 public class Main {
-
-
-    /*请完成下面这个函数，实现题目要求的功能
-  当然，你也可以不按照下面这个模板来作答，完全按照自己的想法来 ^-^
-  ******************************开始写代码******************************/
-    static int findMin(int[][] arr) {
-        List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[0].length; j++) {
-                list.add(arr[i][j]);
-                }
-            }
-
-         Collections.sort(list);
-
-        int min = Integer.MAX_VALUE;
-        for (int i = 0; i < list.size(); i++) {
-            if(list.get(i)!=i+1){
-                min = i+1;
-                break;
-            }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int v = sc.nextInt();
+        sc.nextLine();
+        char[] jsb = new char[4*v];
+        for (int i = 0; i < jsb.length; i++) {
+            String s = sc.next();
+            char[] chars = s.toCharArray();
+            jsb[i] =chars[0];
         }
-        return min;
+
+        for (int i = 0; i < jsb.length; i += 4) {
+            char left = jsb[i];
+            char right= jsb[i+1];
+            char bLeft = jsb[i+2];
+            char bRight = jsb[i+3];
+            judge(left,right,bLeft,bRight);
+        }
     }
-    /******************************结束写代码******************************/
 
-
-    public static void main(String[] args){
-        Scanner in = new Scanner(System.in);
-        int res;
-
-        int _arr_rows = 0;
-        int _arr_cols = 0;
-        _arr_rows = Integer.parseInt(in.nextLine().trim());
-        _arr_cols = Integer.parseInt(in.nextLine().trim());
-
-        int[][] _arr = new int[_arr_rows][_arr_cols];
-        for(int _arr_i=0; _arr_i<_arr_rows; _arr_i++) {
-            for(int _arr_j=0; _arr_j<_arr_cols; _arr_j++) {
-                _arr[_arr_i][_arr_j] = in.nextInt();
-
-            }
+    private static void judge(char left, char right, char bLeft, char bRight) {
+        int lw =0;
+        if(left=='J'){//剪刀
+            if(bLeft=='B' && bRight=='B')lw=2;
+            else if(bLeft=='B' && bRight!='S')lw=1;
+            else if(bLeft!='B' && bRight=='B')lw=1;
+            else lw =0;
+        }else if(left=='S'){//石头
+            if(bLeft=='J' && bRight=='J')lw=2;
+            else if(bLeft=='J' && bRight!='J')lw=1;
+            else if(bLeft!='J' && bRight=='J')lw=1;
+            else lw =0;
+        }else if(left=='B'){//布
+            if(bLeft=='S' && bRight=='S')lw=2;
+            else if(bLeft=='S' && bRight!='S')lw=1;
+            else if(bLeft!='S' && bRight=='B')lw=1;
+            else lw =0;
         }
 
-        if(in.hasNextLine()) {
-            in.nextLine();
+        //右手
+        int rw = 0;
+        if(right=='J'){//剪刀
+            if(bLeft=='B' && bRight=='B')rw=2;
+            else if(bLeft=='B' && bRight!='B')rw=1;
+            else if(bLeft!='B' && bRight=='B')rw=1;
+            else rw =0;
+        }else if(right=='S'){//石头
+            if(bLeft=='J' && bRight=='J')rw=2;
+            else if(bLeft=='J' && bRight!='J')rw=1;
+            else if(bLeft!='J' && bRight=='J')rw=1;
+            else rw =0;
+        }else if(right=='B'){//布
+            if(bLeft=='S' && bRight=='S')rw=2;
+            else if(bLeft=='S' && bRight!='S')rw=1;
+            else if(bLeft!='S' && bRight=='S')rw=1;
+            else rw =0;
         }
 
-        res = findMin(_arr);
-        System.out.println(String.valueOf(res));
-
+        if(lw>rw){
+            System.out.println("left");
+        }else if(lw==rw){
+            System.out.println("same");
+        }else {
+            System.out.println("right");
+        }
     }
 }

@@ -3,6 +3,7 @@ package cn.xie.homework1;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * @author: xie
@@ -10,27 +11,18 @@ import java.util.Arrays;
  **/
 public class Main1 {
     public static void main(String[] args) {
-        Main1 obj = new Main1();
-        int a = 4;
-        int b = 4;
-        int c = 2;
-        int numberofprize = obj.numberofprize(a, b, c);
-        System.out.println(numberofprize);
-    }
-
-    public int numberofprize(int a, int b, int c) {
-        // write code here
-        int[] arr = new int[3];
-        Arrays.sort(arr);
-        int count = 0;
-        while (!(arr[2] - arr[1] <= 1 && arr[2] - arr[0] <= 1 && arr[1] - arr[0] <= 1)) {
-            arr[2] -= arr[2];
-            arr[1] -= arr[1];
-            arr[0] += arr[0];
-            count++;
-            Arrays.sort(arr);
+        Scanner sc = new Scanner(System.in);
+        int v = sc.nextInt();
+        sc.nextLine();
+        String str = sc.nextLine();
+        String s1 = str.replaceAll(" ", "");
+        char[] jsb = s1.toCharArray();
+        System.out.println(jsb.length);
+        for (int i = 0; i < jsb.length; i++) {
+            System.out.println(jsb[i]);
         }
-        return count;
+
+
     }
 }
 

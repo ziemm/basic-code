@@ -1,7 +1,6 @@
 package cn.xie.homework1;
 
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -10,60 +9,42 @@ import java.util.Scanner;
  * @create: 2020-08-13 20:14
  **/
 public class Solution {
+    public static void main(String[] args) {
+       Scanner sc= new Scanner(System.in);
+       int a = sc.nextInt();
+       String str = sc.nextLine();
+       String s = maxSub(str);
+       System.out.println(a-s.length()/2);
+    }
 
-    /*请完成下面这个函数，实现题目要求的功能
-    当然，你也可以不按照下面这个模板来作答，完全按照自己的想法来 ^-^
-    ******************************开始写代码******************************/
-    static int[] subSort(int[] arr) {
-
-        int[] arrCopy = new int[arr.length];
-        for (int i = 0; i < arr.length; i++) {
-            arrCopy[i]=arr[i];
+    private static String maxSub(String s) {
+        int len =s.length();
+        String result = "";
+        int maxLen =0;
+        if(len<=1)
+            return "";
+        String[] strs = new String[len];
+        for (int i = 0; i < len; i++) {
+            strs[i] =s.substring(i,len);
         }
-        Arrays.sort(arrCopy);
-
-        int left =-1;
-        for (int i = 0; i < arr.length; i++) {
-            if(arr[i]!=arrCopy[i]){
-                left=i;
-                break;
+        Arrays.sort(strs);
+        for (int i = 0; i < len - 1; i++) {
+            int tmp = lenTwoStr(strs[i],strs[i+1]);
+            if(tmp > maxLen){
+                maxLen = tmp;
+                result = strs[i].substring(0,maxLen);
             }
         }
-        if(left==-1)
-            return new int[]{-1,-1};
-
-        int right=0;
-        for (int i = arr.length-1; i >=1; i--) {
-            if(arr[i]!=arrCopy[i])
-                right = i;
-                break;
-        }
-        int[] res = new int[2];
-        res[0]=left;
-        res[1]=right;
-        return res;
-    }
-    /******************************结束写代码******************************/
-
-
-    public static void main(String[] args){
-        Scanner in = new Scanner(System.in);
-        int[] res;
-
-        int _arr_size = 0;
-        _arr_size = Integer.parseInt(in.nextLine().trim());
-        int[] _arr = new int[_arr_size];
-        int _arr_item;
-        for(int _arr_i = 0; _arr_i < _arr_size; _arr_i++) {
-            _arr_item = Integer.parseInt(in.nextLine().trim());
-            _arr[_arr_i] = _arr_item;
-        }
-
-        res = subSort(_arr);
-        for(int res_i=0; res_i < res.length; res_i++) {
-            System.out.println(String.valueOf(res[res_i]));
-        }
-
+        return result;
     }
 
+    public static int lenTwoStr(String str1, String str2) {
+        if(str1.length()==0 || str2.length()==0)
+            return 0;
+        int i =0;
+        while (i< str1.length() && i< str2.length() && str1.charAt(i)==str2.charAt(i)){
+            i++;
+        }
+        return i;
+    }
 }
