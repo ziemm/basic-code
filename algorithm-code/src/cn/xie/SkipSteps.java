@@ -1,9 +1,9 @@
-package cn.xie.homework1;
+package cn.xie;
 
 
 import java.util.Scanner;
 
-public class T3 {
+public class SkipSteps {
     private static int n =0;
 
     public static void main(String[] args) {

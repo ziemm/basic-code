@@ -1,4 +1,4 @@
-package cn.xie.jingdong;
+package cn.xie.homework2;
 
 import java.util.Scanner;
 
@@ -26,4 +26,5 @@ public class BollDown {
         }
         System.out.println(arr[0][0]);
     }
+
 }
