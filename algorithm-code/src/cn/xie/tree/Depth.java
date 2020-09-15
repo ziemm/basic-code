@@ -15,4 +15,5 @@ public class Depth {
         int rd = maxDepth(root.right)+1;
          return ld>=rd? ld:rd;
     }
+
 }

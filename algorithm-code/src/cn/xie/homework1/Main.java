@@ -1,56 +1,52 @@
 package cn.xie.homework1;
 
-import cn.xie.TreeNode;
 
-import java.util.*;
+import java.util.Scanner;
 
 /**
  * @author: xie
  * @create: 2020-08-23 15:55
  **/
 public class Main {
-    static List<Integer> preList = new ArrayList<>();
-    static List<Integer> inList = new ArrayList<>();
-    static List<Integer> postList = new ArrayList<>();
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] number = findNumber(n);
 
-    public int[][] threeOrders (TreeNode root) {
-        // write code here
-        preOrder(root);
-        inOrder(root);
-        postOrder(root);
-        int[] pre = preList.stream().mapToInt(Integer::intValue).toArray();
-        int[] in = inList.stream().mapToInt(Integer::intValue).toArray();
-        int[] post = postList.stream().mapToInt(Integer::intValue).toArray();
-        int[][] res = new int[3][pre.length];
-        res[0]=pre;
-        res[1]=in;
-        res[2]=post;
+        System.out.println(number[0]);
+        System.out.println(number[1]);
 
+    }
+    static int[] findNumber(int num) {
+        int count = Integer.bitCount(num);
+        int left = num;
+        int l = -1;
+        while (left-->0){
+            if(Integer.bitCount(left)==count){
+              l = left;
+              break;
+            }
+        }
+        if(left<=0){
+            l = -1;
+        }
+
+        int right = num;
+        int r = -1;
+        while (right++ <Integer.MAX_VALUE){
+            if(Integer.bitCount(right)==count){
+                r = right;
+                break;
+            }
+        }
+        if(Integer.bitCount(right)==count && right==Integer.MAX_VALUE){
+            r = right;
+        }else if(Integer.bitCount(right)!=count && right == Integer.MAX_VALUE){
+            r=-1;
+        }
+        int[] res = new int[2];
+        res[0] = r;
+        res[1] = l;
         return res;
     }
-
-    public void preOrder(TreeNode root){
-        if(root==null)
-            return;
-        preList.add(root.val);
-        preOrder(root.left);
-        preOrder(root.right);
-    }
-
-    public void inOrder(TreeNode root){
-        if(root==null)
-            return;
-        inOrder(root.left);
-        inList.add(root.val);
-        inOrder(root.right);
-    }
-
-    public void postOrder(TreeNode root){
-        if(root==null)
-            return;
-        postOrder(root.left);
-        postOrder(root.right);
-        postList.add(root.val);
-    }
-
 }

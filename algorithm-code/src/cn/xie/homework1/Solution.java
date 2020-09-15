@@ -1,50 +1,59 @@
 package cn.xie.homework1;
 
 
-import java.util.Arrays;
+import com.sun.org.apache.xml.internal.serializer.ElemDesc;
+
 import java.util.Scanner;
+import java.util.Stack;
 
 /**
  * @author: xie
  * @create: 2020-08-13 20:14
  **/
 public class Solution {
-    public static void main(String[] args) {
-       Scanner sc= new Scanner(System.in);
-       int a = sc.nextInt();
-       String str = sc.nextLine();
-       String s = maxSub(str);
-       System.out.println(a-s.length()/2);
+
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        int res;
+
+        String _s;
+        try {
+            _s = in.nextLine();
+        } catch (Exception e) {
+            _s = null;
+        }
+
+        res = longestValidParenthe(_s);
+        System.out.println(String.valueOf(res));
+
     }
 
-    private static String maxSub(String s) {
-        int len =s.length();
-        String result = "";
-        int maxLen =0;
-        if(len<=1)
-            return "";
-        String[] strs = new String[len];
-        for (int i = 0; i < len; i++) {
-            strs[i] =s.substring(i,len);
-        }
-        Arrays.sort(strs);
-        for (int i = 0; i < len - 1; i++) {
-            int tmp = lenTwoStr(strs[i],strs[i+1]);
-            if(tmp > maxLen){
-                maxLen = tmp;
-                result = strs[i].substring(0,maxLen);
+    static int longestValidParenthe(String s) {
+        int[] num = new int[s.length()];
+        char[] chars = s.toCharArray();
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            if(chars[i]=='(')
+                stack.push(i);
+            else if(!stack.isEmpty()){
+                num[i] = 1;
+                num[stack.pop()]=1;
             }
         }
-        return result;
+        int max = 0;
+        int left =0;
+        int right =0;
+        for (left  = 0; left <num.length ; left++) {
+            if(num[left]==0)
+                continue;
+            right =left;
+            while (right<num.length && num[right]==1){
+                right++;
+            }
+            max = Math.max(right-left,max);
+            left = right;
+        }
+        return max;
     }
 
-    public static int lenTwoStr(String str1, String str2) {
-        if(str1.length()==0 || str2.length()==0)
-            return 0;
-        int i =0;
-        while (i< str1.length() && i< str2.length() && str1.charAt(i)==str2.charAt(i)){
-            i++;
-        }
-        return i;
-    }
 }

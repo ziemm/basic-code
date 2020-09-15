@@ -1,6 +1,8 @@
 package cn.xie.homework1;
 
-import java.util.Scanner;
+
+import java.lang.reflect.Array;
+import java.util.*;
 
 /**
  * @author: xie
@@ -9,49 +11,43 @@ import java.util.Scanner;
 public class Main2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String str = sc.nextLine();
-        char[] path = str.toCharArray();
-        boolean run = run(path);
-        if(run){
-            System.out.println("True");
-        }else {
-            System.out.println("False");
+        int groups = sc.nextInt();
+        for (int i = 0; i < groups; i++) {
+            int n = sc.nextInt();//小岛数
+            int m = sc.nextInt();//边数
+            int cost = sc.nextInt();
+            int[][] com = new int[m][3];
+            for (int j = 0; j < com.length; j++) {
+                com[j][0] = sc.nextInt();
+                com[j][1] = sc.nextInt();
+                com[j][2] = sc.nextInt();
+            }
+            if(judge(n ,m ,com)){
+                System.out.println("Yes");
+            }else {
+                System.out.println("No");
+            }
         }
 
     }
 
-    public static boolean run(char[] path){
-        boolean[][] board = new boolean[10000][10000];
-        int row =5000;
-        int col =5000;
-        board[row][col] = true;
-        for (int i = 0; i < path.length; i++) {
-               if('N'==path[i]){
-                   row--;
-                   if(board[row][col]==true){
-                       return true;
-                   }
-                   board[row][col]=true;
-               }else if('S'==path[i]){
-                   row++;
-                   if(board[row][col]==true){
-                       return true;
-                   }
-                   board[row][col]=true;
-               }else if('E'==path[i]){
-                   col++;
-                   if(board[row][col]==true){
-                       return true;
-                   }
-                   board[row][col]=true;
-               }else if('W'==path[i]){
-                   col--;
-                   if(board[row][col]==true){
-                       return true;
-                   }
-                   board[row][col]=true;
-               }
+    public static boolean judge(int n,int cost,int[][] com ){
+        Arrays.sort(com, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return o1[2] - o2[2];
+            }
+        });
+        if(com[0][2]>cost)
+            return false;
+        Set<Integer> set = new HashSet<>();
+        set.add(com[0][0]);
+        set.add(com[0][1]);
+        for (int i = 1; i < com.length; i++) {
+            if(com[i][2] <= cost && set.contains(com[i][0]))
+                set.add(com[i][1]);
         }
-        return false;
+        return set.size() == n;
     }
+
 }
