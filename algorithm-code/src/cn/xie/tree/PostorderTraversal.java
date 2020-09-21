@@ -58,7 +58,6 @@ public class PostorderTraversal {
     public List<Integer> postorderTraversal(TreeNode root){
         List<Integer> res = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
-
         if(root == null)
             return res;
 

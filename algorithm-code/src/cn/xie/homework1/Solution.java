@@ -1,10 +1,9 @@
 package cn.xie.homework1;
 
 
-import com.sun.org.apache.xml.internal.serializer.ElemDesc;
-
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
-import java.util.Stack;
 
 /**
  * @author: xie
@@ -13,47 +12,29 @@ import java.util.Stack;
 public class Solution {
 
     public static void main(String[] args){
-        Scanner in = new Scanner(System.in);
-        int res;
-
-        String _s;
-        try {
-            _s = in.nextLine();
-        } catch (Exception e) {
-            _s = null;
+        Scanner sc = new Scanner(System.in);
+        int n  = sc.nextInt();
+        List<Integer> list = null;
+        for (int i = 1; i <= n; i++) {
+            list = new ArrayList<>();
+            for (int j = 1; j <=i ; j++) {
+                list.add(fb(j));
+            }
+            for (Integer num : list) {
+                System.out.print(num + " ");
+            }
+            for (int k = list.size()-2; k >=0 ; k--) {
+                System.out.print(list.get(k)+" ");
+            }
+            System.out.println();
         }
-
-        res = longestValidParenthe(_s);
-        System.out.println(String.valueOf(res));
-
     }
 
-    static int longestValidParenthe(String s) {
-        int[] num = new int[s.length()];
-        char[] chars = s.toCharArray();
-        Stack<Integer> stack = new Stack<>();
-        for (int i = 0; i < s.length(); i++) {
-            if(chars[i]=='(')
-                stack.push(i);
-            else if(!stack.isEmpty()){
-                num[i] = 1;
-                num[stack.pop()]=1;
-            }
-        }
-        int max = 0;
-        int left =0;
-        int right =0;
-        for (left  = 0; left <num.length ; left++) {
-            if(num[left]==0)
-                continue;
-            right =left;
-            while (right<num.length && num[right]==1){
-                right++;
-            }
-            max = Math.max(right-left,max);
-            left = right;
-        }
-        return max;
+    static int fb(int n){
+        if(n ==1 || n== 2)
+            return 1;
+        else
+            return fb(n-2)+fb(n-1);
     }
 
 }
