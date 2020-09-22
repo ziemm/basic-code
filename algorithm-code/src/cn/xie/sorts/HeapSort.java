@@ -7,7 +7,7 @@ package cn.xie.sorts;
 public class HeapSort {
     public static void main(String[] args) {
         HeapSort obj = new HeapSort();
-        int[] tree = new int[]{2, 5, 3, 1, 10, 4};
+        int[] tree = new int[]{2, 5, 3, 1, 10, 4,7,9,9,90};
         int n = tree.length;
         obj.heapSort(tree, n);
         for (int i = 0; i < tree.length; i++) {
@@ -47,7 +47,7 @@ public class HeapSort {
     /*建堆的过程就是对第一个非叶节点一次递减进行堆调整*/
     public void buildHeap(int[] tree,int n){
         int lastNode = n-1;
-        int parent = (lastNode-1);//找到第一个非叶子节点
+        int parent = (lastNode-1)/2;//找到第一个非叶子节点
         for (int i = parent; i >=0 ; i--) {
             heapify(tree,n,i);
         }
