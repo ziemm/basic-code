@@ -13,7 +13,5 @@ public class Solution {
         Scanner sc = new Scanner(System.in);
         int m = sc.nextInt();
         int n = sc.nextInt();
-
-
     }
 }

@@ -46,7 +46,7 @@ public class InorderTraversal {
             return res;
         TreeNode cur = root;
         while (!stack.isEmpty() || cur!=null){
-            while (cur!=null){//循环到当子树的最左节点
+            while (cur!=null){//循环到当节点的最左节点
                 stack.push(cur);
                 cur = cur.left;
             }
