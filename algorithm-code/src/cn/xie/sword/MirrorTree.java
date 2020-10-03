@@ -1,5 +1,7 @@
 package cn.xie.sword;
 
+import java.util.Stack;
+
 /**
  * @author: xie
  * @create: 2020-05-20 23:15
@@ -19,6 +21,25 @@ public class MirrorTree {
              mirrorTree(root.left);
         if(root.right!=null)
              mirrorTree(root.right);
+        return root;
+    }
+
+    //非递归
+    public TreeNode mirror(TreeNode root){
+        if(root==null)
+            return root;
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()){
+            TreeNode node = stack.pop();
+            if(node.left!=null)
+                stack.push(node.left);
+            if(node.right!=null)
+                stack.push(node.right);
+            TreeNode tmp = node.left;
+            node.left = node.right;
+            node.right = tmp;
+        }
         return root;
     }
 }
