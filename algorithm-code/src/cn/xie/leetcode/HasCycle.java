@@ -7,16 +7,16 @@ import cn.xie.ListNode;
  * @create: 2020-08-26 21:38
  **/
 public class HasCycle {
-    public boolean hasCycle(ListNode head) {
+    public boolean hasCycle(ListNode head){
         if(head==null || head.next==null)
             return false;
-        ListNode p1 = head.next;
-        ListNode p2 = head;
-        while (p1 !=null && p1.next !=null){
-            if(p1 == p2)
+        ListNode fast = head.next;
+        ListNode slow = head;
+        while (fast!=null && fast.next!=null){
+            if(slow==fast)
                 return true;
-            p1 = p1.next.next;
-            p2 = p2.next;
+            slow = slow.next;
+            fast = fast.next.next;
         }
         return false;
     }
