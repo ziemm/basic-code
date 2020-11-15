@@ -6,6 +6,9 @@ package cn.xie.sword;
  * @create: 2020-05-12 18:20
  **/
 public class MyPow {
+    public static void main(String[] args) {
+        System.out.println((-3)/2);
+    }
 
     public double myPow(double x, int n) {
 
