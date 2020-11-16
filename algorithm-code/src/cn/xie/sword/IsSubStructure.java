@@ -1,6 +1,5 @@
 package cn.xie.sword;
 
-import com.sun.org.apache.regexp.internal.RE;
 
 /**
  * @author: xie
