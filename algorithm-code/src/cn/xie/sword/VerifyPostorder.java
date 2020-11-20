@@ -28,7 +28,7 @@ public class VerifyPostorder {
         if (start>=end)
             return true;//左右相遇，为true
         int root =postorder[end]; //二叉搜索树的根
-        //寻找左子树的根
+        //寻找左子树的
         int i = start;
         for(;i<end;i++){
             if(postorder[i]>root)

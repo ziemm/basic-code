@@ -22,7 +22,7 @@ public class MinStack {
     }
 
     public void pop() {
-        if(A.pop().equals(B.peek()));
+        A.pop();
         B.pop();
     }
 
