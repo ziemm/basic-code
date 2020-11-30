@@ -8,7 +8,7 @@ import java.util.Arrays;
  **/
 public class getLeastNumbers {
     public int[] getLeastNumbers(int[] arr, int k) {
-        if(k==0||arr.length==0)
+        if(k<=0||arr.length==0)
             return new int[0];
         return quickSearchK(arr,0,arr.length-1,k-1);
     }

@@ -50,6 +50,7 @@ public class MajorityElement {
             else
                 votes--;
         }
+
         return res;
     }
 }

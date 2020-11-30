@@ -15,7 +15,7 @@ public class VerifySquenceOfBST {
     public boolean verifySquenceOfBST(int [] sequence,int start,int end) {
         if(start>=end)
             return true;//递归出口
-        int i =0;
+        int i =start;
         //搜索二叉树的后序遍历的最后一个元素是根
         int root = sequence[end];
         //寻找左子树的

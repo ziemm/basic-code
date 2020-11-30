@@ -7,6 +7,8 @@ package cn.xie.sword;
 
 
 public class TreeToDoublyList {
+
+
     class Node {
         public int val;
         public Node left;
@@ -51,6 +53,5 @@ public class TreeToDoublyList {
         tail = root;
         //访问右子树
         inorder(root.right);
-        return;
     }
 }

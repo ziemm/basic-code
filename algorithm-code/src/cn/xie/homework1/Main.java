@@ -7,19 +7,26 @@ import java.util.*;
  * @create: 2020-08-23 15:55
  **/
 public class Main {
-    public int translateNum(int num) {
-        String s = String.valueOf(num);
-
-        int[] dp = new int[s.length()+1];
-        dp[0] = dp[1] =1;
-        for (int i = 2; i <=s.length() ; i++) {
-            String sTemp =s.substring(i-2,i);//观察两位
-            if(sTemp.compareTo("10")>=0&&sTemp.compareTo("25")<=0){
-                dp[i] = dp[i-1]+dp[i-2];
+    public int[] getLeastNumbers(int[] arr, int k) {
+        if(arr.length==0 || k==0)
+            return new int[0];
+        PriorityQueue<Integer> pQueue = new PriorityQueue<>((v1,v2)->v2-v1);
+        for (int num : arr) {
+            if(pQueue.size()<k){
+                pQueue.offer(num);
             }else {
-                dp[i]=dp[i-1];
+                if(pQueue.peek()>num){
+                    pQueue.poll();
+                    pQueue.offer(num);
+                }
             }
         }
-        return dp[dp.length-1];
+
+        int[] res = new int[k];
+        int idx =0;
+        for (Integer num : pQueue) {
+            res[idx++] = num;
+        }
+        return res;
     }
 }
