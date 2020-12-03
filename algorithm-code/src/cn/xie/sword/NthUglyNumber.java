@@ -7,8 +7,11 @@ package cn.xie.sword;
 public class NthUglyNumber {
     public static void main(String[] args) {
         NthUglyNumber obj = new NthUglyNumber();
-        int i = obj.nthUglyNumber(4);
-        System.out.println(i);
+        for (int i = 0; i < 20; i++) {
+            int res = obj.nthUglyNumber(i);
+            System.out.print(res+" ");
+        }
+
     }
     public int nthUglyNumber(int n){
         if(n<=0) return 0;
