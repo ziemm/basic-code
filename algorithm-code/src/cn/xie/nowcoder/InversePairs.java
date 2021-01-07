@@ -11,23 +11,30 @@ public class InversePairs {
     }
 
     public int merge(int[] array,int start,int end){
-        if(start==end)
-            return 0;
-        int mid = start+(end-start)/2;
-        int count = merge(array,start,mid)+merge(array,mid+1,end);
+       if(start==end)
+           return 0;
+       int mid = start+(end-start)/2;
+       int count = merge(array,start,mid)+merge(array,mid+1,end);
 
-        int i = start,j=mid+1,k=0;
-        int[] temp = new int[end-start+1];
-        while (i<=mid && j<=end){
-            count+= array[i]<=array[j]?0:mid+1-i;
-            temp[k++]=array[start]<=array[end]?array[i++]:array[j++];
+       int[] temp = new int[end-start+1];
+       int i = start,j=mid+1,k=0;
+        while(i<=mid && j<= end){
+//如果前面的元素小于后面的不能构成逆序对
+            if(array[i] <= array[j])
+                temp[k++] = array[i++];
+            else{
+//如果前面的元素大于后面的，那么在前面元素之后的元素都能和后面的元素构成逆序对
+                temp[k++] = array[j++];
+                count = (count + (mid-i+1))%1000000007;
+            }
         }
-
-        while (i<=mid)
-            temp[k++]=array[i++];
-        while (j<=end)
-            temp[k++]=array[j++];
-        System.arraycopy(temp,0,array,start,end-start+1);
-        return count;
+       while (i<=mid){
+           temp[k++]=array[i++];
+       }
+       while (j<=end){
+           temp[k++] = array[j++];
+       }
+       System.arraycopy(temp,0,array,start,end-start+1);
+       return count;
     }
 }

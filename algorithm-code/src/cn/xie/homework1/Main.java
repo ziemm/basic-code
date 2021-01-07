@@ -1,5 +1,4 @@
 package cn.xie.homework1;
-import cn.xie.TreeNode;
 
 import java.util.*;
 
@@ -8,26 +7,26 @@ import java.util.*;
  * @create: 2020-08-23 15:55
  **/
 public class Main {
-    public boolean isSubStructure(TreeNode A, TreeNode B) {
-        boolean res = false;
-        if(A!=null &&  B!=null){
-            if(A.val==B.val)
-                res = doseTreeHasTree(A,B);
-            if(!res)
-                res = isSubStructure(A.left,B);
-            if(!res)
-                res = isSubStructure(A.right,B);
+    public int[] getLeastNumbers(int[] arr, int k) {
+        if(arr.length==0 || k==0)
+            return new int[0];
+        PriorityQueue<Integer> pQueue = new PriorityQueue<>((v1,v2)->v2-v1);
+        for (int num : arr) {
+            if(pQueue.size()<k){
+                pQueue.offer(num);
+            }else {
+                if(pQueue.peek()>num){
+                    pQueue.poll();
+                    pQueue.offer(num);
+                }
+            }
+        }
+
+        int[] res = new int[k];
+        int idx =0;
+        for (Integer num : pQueue) {
+            res[idx++] = num;
         }
         return res;
-    }
-
-    private boolean doseTreeHasTree(TreeNode A, TreeNode B) {
-        if(B==null)
-            return true;
-        if(A==null)
-            return false;
-        if(A.val!=B.val)
-            return false;
-        return doseTreeHasTree(A.left,B.left)&&doseTreeHasTree(A.right,B.right);
     }
 }
