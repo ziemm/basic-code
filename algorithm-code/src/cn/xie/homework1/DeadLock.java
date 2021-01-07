@@ -1,40 +1,38 @@
 package cn.xie.homework1;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 /**
- * lambda表达式写法：作为Thread对象的构造函数的一个参数
  * @author: xie
- * @create: 2020-11-30 21:38
+ * @create: 2020-09-30 15:23
  **/
 public class DeadLock {
+    public static Object source1 = new Object();
+    public static Object source2 = new Object();
 
-    private static Object resource1 = new Object();
-    private static Object resource2 = new Object();
     public static void main(String[] args) {
-        new Thread(()->{
-            synchronized (resource1){
+        new Thread(() -> {
+            synchronized (source1) {
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                synchronized (source2) {
+                }
             }
-            synchronized (resource2){
+        }, "Thread1").start();
 
-            }
-        },"Thread1").start();
-
-        new Thread(()->{
-            synchronized (resource2){
+        new Thread(() -> {
+            synchronized (source2) {
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                synchronized (source1) {
+                }
             }
-            synchronized (resource1){}
-        },"Thread2").start();
+        }, "Thread2").start();
     }
+
 
 }

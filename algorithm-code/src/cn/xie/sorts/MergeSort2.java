@@ -27,7 +27,6 @@ public class MergeSort2 {
             temp[k++]=arr[i++];
         while (j<=end)
             temp[k++]=arr[j++];
-
         System.arraycopy(temp,0,arr,start,end-start+1);
     }
 }

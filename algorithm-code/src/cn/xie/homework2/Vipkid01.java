@@ -18,7 +18,7 @@ public class Vipkid01 {
     public static int calculate(String s) {
         int res = 0, d = 0;
         char sign = '+';
-        Stack<Integer> nums = new Stack<Integer> ();
+        Stack<Integer> nums = new Stack<> ();
         for (int i = 0; i < s.length(); i++) {
             //加减乘除和空格的ASCII码都小于'0'
             if (s.charAt(i) >= '0'){

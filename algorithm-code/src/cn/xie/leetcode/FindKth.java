@@ -1,6 +1,5 @@
 package cn.xie.leetcode;
 
-import java.util.Arrays;
 
 /**
  * @author: xie

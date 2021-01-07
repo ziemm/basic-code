@@ -38,7 +38,7 @@ public class QuNa01 {
 //        System.out.println(res);
 //    }
 
-    static Map<String,Long> map= new HashMap<String, Long>();
+    static Map<String,Long> map= new HashMap<>();
     private static long pro(int m,int n){
         String key= m+","+n;
         if(n==0)

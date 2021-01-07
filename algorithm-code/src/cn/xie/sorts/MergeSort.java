@@ -12,6 +12,7 @@ public class MergeSort {
         System.out.println("排好序的数组：");
         for (int e : a)
             System.out.print(e+" ");
+        int[] c = new int[9];
     }
     public static void merge(int[] a, int left, int mid, int right) {
         int[] temp = new int[a.length]; //辅助数组
