@@ -7,26 +7,38 @@ import java.util.*;
  * @create: 2020-08-23 15:55
  **/
 public class Main {
-    public int[] getLeastNumbers(int[] arr, int k) {
-        if(arr.length==0 || k==0)
-            return new int[0];
-        PriorityQueue<Integer> pQueue = new PriorityQueue<>((v1,v2)->v2-v1);
-        for (int num : arr) {
-            if(pQueue.size()<k){
-                pQueue.offer(num);
-            }else {
-                if(pQueue.peek()>num){
-                    pQueue.poll();
-                    pQueue.offer(num);
+    public static void main(String[] args) {
+        int[] work = {16,14,6,5,4,3,2};
+        int m = 3;
+        int res = distribute(work, m);
+        System.out.println(res);
+    }
+    public static int distribute(int[] works,int m)
+    {
+        int n = works.length;
+        int[] machines =new int[m];
+        int minP = -1,minT = Integer.MAX_VALUE;
+        int maxT = -1;
+        int i=0,j=0;
+
+        for(i = 0;i < n; i++)
+        {
+            minP = 0;
+            minT = machines[0];
+            for(j = 1;j < m; j++)
+            {
+                if(minT > machines[j])
+                {
+                    minP = j;
+                    minT = machines[j];
                 }
             }
+            machines[minP] += works[i];
+            if(maxT < machines[minP])
+            {
+                maxT = machines[minP];
+            }
         }
-
-        int[] res = new int[k];
-        int idx =0;
-        for (Integer num : pQueue) {
-            res[idx++] = num;
-        }
-        return res;
+        return maxT;
     }
 }

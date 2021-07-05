@@ -15,6 +15,7 @@ public class JDBCUtils {
     private static String driver;
     private static String url;
     private static String user;
+
     private static String password;
 
     //读取资源文件
